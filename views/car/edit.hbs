@@ -5,11 +5,7 @@
             <label for="brand">Brand</label><br>
             <select class="form-control" name="brand">
                 {{#each brands }}
-                    {{#if (eq _id car.brand._id)}}
-                        <option selected value="{{_id}}">{{name}}</option> 
-                    {{else}}
-                        <option value="{{_id}}">{{name}}</option> 
-                    {{/if}}
+                    <option {{#if (eq _id ../car.brand._id)}} selected {{/if}} value="{{_id}}">{{name}}</option>
                 {{/each}}
             </select><br><br>
         </div>
@@ -19,7 +15,8 @@
         </div>
         <div>
             <label for="price">Price</label><br>
-            <input class="form-control" type="number" name="price" min="1" value="{{car.price}}"><br><br>
+            <input class="form-control" type="number" name="price" min="1" value="{{car.price}}">
+            <br><br>
         </div>
         <div>
             <label for="purchases">Purchases</label><br>

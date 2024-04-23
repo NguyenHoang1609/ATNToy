@@ -62,7 +62,7 @@ app.use(function(err, req, res, next) {
 
 var hbs = require('hbs');
 hbs.registerHelper('eq', function(a, b) {
-  return a === b;
+  return a.toString() === b.toString();
 });
 
 //update port to deploy to Render cloud

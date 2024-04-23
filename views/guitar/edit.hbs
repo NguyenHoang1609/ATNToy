@@ -4,8 +4,8 @@
         <div>
             <label for="brand">Brand</label><br>
             <select class="form-control" name="brand">
-                {{#each brands}}
-                    <option {{#if (equals brands.name guitar.brand) }}selected{{/if}} value="{{_id}}">{{name}}</option>
+                {{#each brands }}
+                    <option {{#if (eq _id ../guitar.brand._id)}} selected {{/if}} value="{{_id}}">{{name}}</option>
                 {{/each}}
             </select><br><br>
         </div>

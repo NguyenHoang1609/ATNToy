@@ -4,12 +4,8 @@
         <div>
             <label for="brand">Brand</label><br>
             <select class="form-control" name="brand">
-                {{#each brands}}
-                    {{#if  (eq _id car.brand._id)}}
-                        <option selected value="{{_id}}">{{name}}</option>
-                    {{else}}
-                        <option value="{{_id}}">{{name}}</option>
-                    {{/if}}
+                {{#each brands }}
+                    <option {{#if (eq _id ../doll.brand._id)}} selected {{/if}} value="{{_id}}">{{name}}</option>
                 {{/each}}
             </select><br><br>
         </div>
