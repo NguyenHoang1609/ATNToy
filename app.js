@@ -22,7 +22,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 //Connect to DB
 var mongoose = require('mongoose');
 var uri = "mongodb+srv://dangtien:tien0813311399@cluster399.7mrbydg.mongodb.net/ATNToy";
-mongoose.set('strictQuery', true);
 mongoose.connect(uri)
 .then( () => console.log("Connect to DB success!"))
 .catch( (err) => console.log(err));

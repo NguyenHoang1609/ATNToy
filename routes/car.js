@@ -48,7 +48,7 @@ router.get('/edit/:id', async (req, res) => {
    let id = req.params.id;
    let brands = await brandModel.find({});
    let car = await carModel.findById(id).populate('brand');
-   res.render('car/edit', { car, brands, _idBrand });
+   res.render('car/edit', { car, brands });
 });
 //Step 2: Update data after EDIT
 router.post('/edit/:id', async (req, res) => {
