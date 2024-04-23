@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product List</title>
+    <style>
+        .table-responsive {
+            margin-top: 20px;
+        }
+        .product-image {
+            width: 100px;
+            height: auto;
+        }
+        .btn-menu {
+            margin-right: 5px;
+        }
+        .table {
+            table-layout: fixed;
+            width: 100%;
+        }
+        th, td {
+            text-align: center;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Button to Add New Product -->
+        <a href="/doll/add" type="button" class="btn btn-primary mt-3">Add New Doll</a>
+
+        <!-- Product Table -->
+        <div class="table-responsive">
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>Image</th>
+                        <th>Menu</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each dollList }}
+                        <tr>
+                            <td>{{ name }}</td>
+                            <td>${{ price }}</td>
+                            <td>
+                                <a href="/doll/detail/{{_id}}"><img src="{{image}}" alt="{{name}}" class="product-image"></a>
+                            </td>
+                            <td>
+                                <a href="/doll/delete/{{_id}}" class="btn btn-danger btn-menu"
+                                onclick="return confirm('Are you sure to delete this doll ?');">Delete</a>
+                                <a href="/doll/edit/{{_id}}" class="btn btn-success btn-menu">Edit</a>
+                            </td>
+                        </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

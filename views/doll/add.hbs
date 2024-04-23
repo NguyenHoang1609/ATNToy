@@ -1,0 +1,30 @@
+<div class="container text-center col-md-6">
+  <form action="/doll/add" method="post">
+    <h1 class="text text-primary text-uppercase">Add new doll toy</h1>
+    <div>
+      <label for="brand">Brand</label><br>
+      <select class="form-control" name="brand">
+        {{#each brands }}
+            <option value="{{_id}}">{{ name }}</option>
+        {{/each}}
+      </select><br><br>
+    </div>
+    <div>
+        <label for="name">Product Name</label><br>
+        <input class="form-control" type="text" name="name"><br><br>
+    </div>
+    <div>
+        <label for="price">Price</label><br>
+        <input class="form-control" type="number" name="price" min="1"><br><br>
+    </div>
+    <div>
+        <label for="purchases">Purchases</label><br>
+        <input class="form-control" type="number" name="purchases" value="0" readonly><br><br>
+    </div>
+    <div>
+        <label for="image">Product Image URL</label><br>
+        <input class="form-control" type="url" name="image"><br><br>
+    </div>
+    <input class="" type="submit" value="Add" style="background-color: #4CAF50; color: white; padding: 15px 32px; font-size: 16px; border: none; border-radius: 5px; cursor: pointer;">
+  </form>
+</div>

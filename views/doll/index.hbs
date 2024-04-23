@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car toy</title>
+    <style>
+        .product-card {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        .product-image {
+            width: 100%;
+            height: auto;
+        }
+        .card-body {
+            flex: 1; /* Cho phép nội dung card body chiếm đầy không gian còn lại */
+        }
+        .card-footer {
+            font-size: 0.8em;
+            color: gray;
+        }
+        .card-text strong {
+            color: #ff00c8; /* Màu xanh của bootstrap, bạn có thể tùy chỉnh theo ý muốn */
+            font-size: 1.2em; /* Làm cho giá bán nổi bật hơn */
+        }
+        .text-normal {
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Thanh tìm kiếm -->
+        <div class="row">
+            <div class="col-md-12 mb-10">
+                <div class="input-group" style="width: 50%;">
+                    <form action="/doll/search" method="post" style="display: flex; width: 100%;">
+                        <input class="form-control" type="search" name="keyword" placeholder="Search by name product" style="flex-grow: 1;">
+                        <button type="submit" class="btn btn-primary">Search</button>
+                    </form>
+                </div> <br>
+            </div>
+        </div>
+
+        <!-- Button sắp xếp theo giá -->
+        <div class="row">
+            <a href="/doll/sort/asc" class="col-md-3">
+                <button class="btn btn-primary mb-3">Price from low to high</button>
+            </a>
+            <a href="/doll/sort/dec" class="col-md-3">
+                <button class="btn btn-primary mb-3">Price from high to low</button>
+            </a>
+        </div>
+
+        <!-- Hiển thị sản phẩm -->
+        <div class="row">
+            {{#each dollList }}
+                <div class="col-md-4">
+                    <div class="card product-card">
+                        <a href="/doll/detail/{{_id}}">
+                            <img src="{{image}}" class="card-img-top product-image" alt="{{name}}">
+                        </a>
+                        <a class="text-normal" href="/doll/detail/{{_id}}">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ name }}</h5>
+                                <p class="card-text"><strong>Price: ${{price}}</strong></p>
+                                <a href="/doll/detail/{{_id}}" class="btn btn-primary">Product details</a>
+                            </div>
+                        </a>
+                        <div class="card-footer text-muted" style="background-color: white; border-top: none;">
+                            <span style="float: left; font-size: 0.8em; color: gray;">Brand: {{ brand.name }}</span>
+                            <span style="float: right; font-size: 0.8em; color: gray;">{{ purchases }} sold</span>
+                        </div>
+                    </div>
+                </div>
+            {{/each}}
+                <!-- Lặp lại các thẻ col-md-4 tương tự cho các sản phẩm khác -->
+        </div>
+    </div>
+</body>
+</html>

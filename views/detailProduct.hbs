@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details</title>
+    <style>
+        .product-image {
+            height: 100vh;
+            background-size: cover;
+            background-position: center;
+        }
+        .highlight {
+            color: red;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .order-button {
+            width: 100%;
+            padding: 10px;
+            font-size: 20px;
+            background-color: blue;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid h-100">
+        <div class="row h-100">
+            <div class="col-md-6 product-image" style="background-image: url('{{ product.image }}');">
+                <!-- Image fills left half of the screen -->
+            </div>
+            <div class="col-md-6 d-flex flex-column justify-content-center">
+                <h1>{{ product.name }}</h1>
+                <p class="highlight">${{ product.price }}</p>
+                <p>Sold: {{ product.purchases }}</p>
+                <p>Brand: {{ product.brand.name }}</p>
+                <button class="order-button">Order Now</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

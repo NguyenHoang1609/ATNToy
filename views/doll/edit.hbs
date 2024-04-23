@@ -1,0 +1,35 @@
+<div class="container text-center col-md-6">
+    <form action="/doll/edit/{{doll._id}}" method="post">
+        <h1 class="text text-primary text-uppercase">Edit doll toy</h1>
+        <div>
+            <label for="brand">Brand</label><br>
+            <select class="form-control" name="brand">
+                {{#each brands}}
+                    {{#if  (eq _id car.brand._id)}}
+                        <option selected value="{{_id}}">{{name}}</option>
+                    {{else}}
+                        <option value="{{_id}}">{{name}}</option>
+                    {{/if}}
+                {{/each}}
+            </select><br><br>
+        </div>
+        <div>
+            <label for="name">Product Name</label><br>
+            <input class="form-control" type="text" name="name" value="{{doll.name}}"><br><br>
+        </div>
+        <div>
+            <label for="price">Price</label><br>
+            <input class="form-control" type="number" name="price" min="1" value="{{doll.price}}"><br><br>
+        </div>
+        <div>
+            <label for="purchases">Purchases</label><br>
+            <input class="form-control" type="number" name="purchases" value="{{doll.purchases}}" readonly><br><br>
+        </div>
+        <div>
+            <label for="image">Product Image URL</label><br>
+            <input class="form-control" type="url" name="image" value="{{doll.image}}"><br><br>
+        </div>
+        <input type="submit" value="Edit"
+            style="background-color: #4CAF50; color: white; padding: 15px 32px; font-size: 16px; border: none; border-radius: 5px; cursor: pointer;">
+    </form>
+</div>
