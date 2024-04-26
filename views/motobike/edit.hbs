@@ -1,29 +1,31 @@
 <div class="container text-center col-md-6">
-    <form action="/guitar/edit/{{guitar._id}}" method="post">
-        <h1 class="text text-primary text-uppercase">Edit guitar toy</h1>
+    <form action="/motobike/edit/{{motobike._id}}" method="post">
+        <h1 class="text text-primary text-uppercase">Edit motobike toy</h1>
         <div>
             <label for="brand">Brand</label><br>
             <select class="form-control" name="brand">
                 {{#each brands }}
-                    <option {{#if (eq _id ../guitar.brand._id)}} selected {{/if}} value="{{_id}}">{{name}}</option>
+                    <option {{#if (eq _id ../motobike.brand._id)}} selected {{/if}} value="{{_id}}">{{name}}</option>
                 {{/each}}
             </select><br><br>
         </div>
         <div>
             <label for="name">Product Name</label><br>
-            <input class="form-control" type="text" name="name" value="{{guitar.name}}" required><br><br>
+            <input class="form-control" type="text" name="name" value="{{motobike.name}}" required><br><br>
         </div>
         <div>
             <label for="price">Price</label><br>
-            <input class="form-control" type="number" name="price" min="1" value="{{guitar.price}}" required><br><br>
+            <input class="form-control" type="number" name="price" min="1" value="{{motobike.price}}" required>
+            <br><br>
         </div>
         <div>
-            <label for="purchases">Purchases</label><br>
-            <input class="form-control" type="number" name="purchases" value="{{guitar.purchases}}" readonly><br><br>
+            <label for="date">Date</label><br>
+            <input class="form-control" type="date" name="date" required><br><br>
         </div>
+        
         <div>
             <label for="image">Product Image URL</label><br>
-            <input class="form-control" type="url" name="image" value="{{guitar.image}}"><br><br>
+            <input class="form-control" type="url" name="image" value="{{motobike.image}}"><br><br>
         </div>
         <input type="submit" value="Edit"
             style="background-color: #4CAF50; color: white; padding: 15px 32px; font-size: 16px; border: none; border-radius: 5px; cursor: pointer;">

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Car toy</title>
+    <title>Motobike toy</title>
     <style>
         .product-card {
             margin-top: 20px;
@@ -37,37 +37,38 @@
         <div class="row">
             <div class="col-md-12 mb-10">
                 <div class="input-group" style="width: 50%;">
-                    <form action="/guitar/search" method="post" style="display: flex; width: 100%;">
+                    <form action="/motobike/search" method="post" style="display: flex; width: 100%;">
                         <input class="form-control" type="search" name="keyword" placeholder="Search by name product" style="flex-grow: 1;">
                         <button type="submit" class="btn btn-primary">Search</button>
-                    </form> 
+                    </form>
                 </div> <br>
             </div>
         </div>
 
+
         <!-- Button sắp xếp theo giá -->
         <div class="row">
-            <a href="/guitar/sort/asc" class="col-md-3">
+            <a href="/motobike/sort/asc" class="col-md-3">
                 <button class="btn btn-primary mb-3">Price from low to high</button>
             </a>
-            <a href="/guitar/sort/dec" class="col-md-3">
+            <a href="/motobike/sort/dec" class="col-md-3">
                 <button class="btn btn-primary mb-3">Price from high to low</button>
             </a>
         </div>
 
         <!-- Hiển thị sản phẩm -->
         <div class="row">
-            {{#each guitarList }}
+            {{#each motobikeList }}
                 <div class="col-md-4">
                     <div class="card product-card">
-                        <a href="/guitar/detail/{{_id}}">
+                        <a href="/motobike/detail/{{_id}}">
                             <img src="{{image}}" class="card-img-top product-image" alt="{{name}}">
                         </a>
-                        <a class="text-normal" href="/guitar/detail/{{_id}}">
+                        <a class="text-normal" href="/motobike/detail/{{_id}}">
                             <div class="card-body">
                                 <h5 class="card-title">{{ name }}</h5>
                                 <p class="card-text"><strong>Price: ${{price}}</strong></p>
-                                <a href="/guitar/detail/{{_id}}" class="btn btn-primary">Product details</a>
+                                <a href="/motobike/detail/{{_id}}" class="btn btn-primary">Product details</a>
                             </div>
                         </a>
                         <div class="card-footer text-muted" style="background-color: white; border-top: none;">

@@ -28,7 +28,7 @@
 <body>
     <div class="container">
         <!-- Button to Add New Product -->
-        <a href="/guitar/add" type="button" class="btn btn-primary mt-3">Add New guitar</a>
+        <a href="/motobike/add" type="button" class="btn btn-primary mt-3">Add New motobike</a>
 
         <!-- Product Table -->
         <div class="table-responsive">
@@ -38,21 +38,23 @@
                         <th>Name</th>
                         <th>Price</th>
                         <th>Image</th>
+                        <th>Date</th>
                         <th>Menu</th>
                     </tr>
                 </thead>
                 <tbody>
-                    {{#each guitarList }}
+                    {{#each motobikeList }}
                         <tr>
                             <td>{{ name }}</td>
                             <td>${{ price }}</td>
                             <td>
-                                <a href="/guitar/detail/{{_id}}"><img src="{{image}}" alt="{{name}}" class="product-image"></a>
+                                <a href="/motobike/detail/{{_id}}"><img src="{{image}}" alt="{{name}}" class="product-image"></a>
                             </td>
+                            <td>{{ date }}</td>
                             <td>
-                                <a href="/guitar/delete/{{_id}}" class="btn btn-danger btn-menu"
-                                onclick="return confirm('Are you sure to delete this guitar ?');">Delete</a>
-                                <a href="/guitar/edit/{{_id}}" class="btn btn-success btn-menu">Edit</a>
+                                <a href="/motobike/delete/{{_id}}" class="btn btn-danger btn-menu"
+                                onclick="return confirm('Are you sure to delete this motobike ?');">Delete</a>
+                                <a href="/motobike/edit/{{_id}}" class="btn btn-success btn-menu">Edit</a>
                             </td>
                         </tr>
                     {{/each}}

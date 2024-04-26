@@ -8,7 +8,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var carRouter = require('./routes/car');
 var doolRouter = require('./routes/doll');
-var guitarRouter = require('./routes/guitar');
+var motobikeRouter = require('./routes/motobike');
 var modelRouter = require('./routes/model');
 
 var app = express();
@@ -21,7 +21,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 //Connect to DB
 var mongoose = require('mongoose');
-var uri = "mongodb+srv://dangtien:tien0813311399@cluster399.7mrbydg.mongodb.net/ATNToy";
+var uri = "mongodb+srv://NguyenHoang:0968246811@cluster0.zhdwhfl.mongodb.net/Product";
 mongoose.connect(uri)
 .then( () => console.log("Connect to DB success!"))
 .catch( (err) => console.log(err));
@@ -40,7 +40,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/car', carRouter);
 app.use('/doll', doolRouter);
-app.use('/guitar', guitarRouter);
+app.use('/motobike', motobikeRouter);
 app.use('/model', modelRouter);
 
 // catch 404 and forward to error handler

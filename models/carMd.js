@@ -9,7 +9,9 @@ var CarSchema = mongoose.Schema(
         name : String,
         price : Number,
         purchases : Number,
-        image : String
+        image : String,
+        date : String,
+        category : String
     }
 );
 

@@ -1,6 +1,6 @@
 <div class="container text-center col-md-6">
-  <form action="/guitar/add" method="post">
-    <h1 class="text text-primary text-uppercase">Add new guitar toy</h1>
+  <form action="/motobike/add" method="post">
+    <h1 class="text text-primary text-uppercase">Add new motobike toy</h1>
     <div>
       <label for="brand">Brand</label><br>
       <select class="form-control" name="brand">
@@ -14,13 +14,14 @@
         <input class="form-control" type="text" name="name" required><br><br>
     </div>
     <div>
+      <label for="date">Date</label><br>
+      <input class="form-control" type="date" name="date" required><br><br>
+    </div>
+    <div>
         <label for="price">Price</label><br>
         <input class="form-control" type="number" name="price" min="1" required><br><br>
     </div>
-    <div>
-        <label for="purchases">Purchases</label><br>
-        <input class="form-control" type="number" name="purchases" value="0" readonly><br><br>
-    </div>
+    
     <div>
         <label for="image">Product Image URL</label><br>
         <input class="form-control" type="url" name="image"><br><br>

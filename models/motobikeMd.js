@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 
-var guitarSchema = mongoose.Schema(
+var MotobikeSchema = mongoose.Schema(
     {
         brand : {
             type: mongoose.Schema.Types.ObjectId,
@@ -9,9 +9,12 @@ var guitarSchema = mongoose.Schema(
         name : String,
         price : Number,
         purchases : Number,
-        image : String
+        image : String, 
+        date : String,
+        category : String
     }
 );
-var guitarModel = mongoose.model("guitars", guitarSchema);
 
-module.exports = guitarModel;
+var motobikeModel = mongoose.model("motobikes", MotobikeSchema);
+
+module.exports = motobikeModel;
